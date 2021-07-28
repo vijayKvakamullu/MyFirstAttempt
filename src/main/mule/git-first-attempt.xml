@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="c1826b74-da0e-4f9e-9707-366460074912" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="git-first-attemptFlow" doc:id="add59efa-9359-47fa-a738-24b8e1431b78" >
+		<http:listener doc:name="Listener" doc:id="63370350-f1b4-4ab7-8259-5de5e9a72e43" config-ref="HTTP_Listener_config" path="/gitAttempt"/>
+		<set-payload value='#["Welcome to GitHub"]' doc:name="Set Payload" doc:id="144d11a6-b0ad-4b65-ba25-839925d74de3" />
+	</flow>
+</mule>
